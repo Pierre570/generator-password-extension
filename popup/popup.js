@@ -40,34 +40,28 @@ class PasswordGenerator {
     );
   }
 
-  async loadSettings() {
-    chrome.storage.sync.get(
-      ["upperCase", "specialCharacters", "numbers", "length"],
-      (result) => {
-        this.upperCase.checked = result.upperCase || false;
-        this.specialCharacters.checked = result.specialCharacters || false;
-        this.numbersCheckbox.checked = result.numbers || false;
-        this.lengthInput.value = result.length || 25;
-        this.lengthValue.textContent = this.lengthInput.value;
-        this.generatePassword();
-      }
-    );
+  loadSettings() {
+    this.upperCase.checked = localStorage.getItem("upperCase") === "true";
+    this.specialCharacters.checked =
+      localStorage.getItem("specialCharacters") === "true";
+    this.numbersCheckbox.checked = localStorage.getItem("numbers") === "true";
+    this.lengthInput.value = localStorage.getItem("length") || 25;
+    this.lengthValue.textContent = this.lengthInput.value;
+    this.generatePassword();
   }
 
   saveUpperCase() {
-    chrome.storage.sync.set({ upperCase: this.upperCase.checked });
+    localStorage.setItem("upperCase", this.upperCase.checked);
     this.generatePassword();
   }
 
   saveSpecialCharacters() {
-    chrome.storage.sync.set({
-      specialCharacters: this.specialCharacters.checked,
-    });
+    localStorage.setItem("specialCharacters", this.specialCharacters.checked);
     this.generatePassword();
   }
 
   saveNumbers() {
-    chrome.storage.sync.set({ numbers: this.numbersCheckbox.checked });
+    localStorage.setItem("numbers", this.numbersCheckbox.checked);
     this.generatePassword();
   }
 
@@ -77,7 +71,7 @@ class PasswordGenerator {
 
   handleLengthInput() {
     this.lengthValue.textContent = this.lengthInput.value;
-    chrome.storage.sync.set({ length: this.lengthInput.value });
+    localStorage.setItem("length", this.lengthInput.value);
     this.generatePassword();
   }
 

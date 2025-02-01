@@ -6,7 +6,6 @@
   "action": {
     "default_popup": "popup/popup.html"
   },
-  "permissions": ["storage"],
   "icons": {
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
