@@ -16,7 +16,6 @@ A simple browser extension that helps you generate secure passwords with customi
 1. Clone this repository
 2. Open your browser and go to the extensions page
    - Chrome: `chrome://extensions/`
-   - Firefox: `about:addons`
 3. Enable "Developer mode"
 4. Click "Load unpacked" and select the extension folder
 
