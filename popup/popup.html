@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Password Generator</h1>
+    <div class="password-container">
+      <p id="password"></p>
+      <div class="icons-container">
+        <img src="../icons/copy-regular.svg" alt="" id="copy-icon" />
+        <img src="../icons/arrows-rotate-solid.svg" alt="" id="refresh-icon" />
+      </div>
+    </div>
+    <label for="length" class="label-length">Password length</label>
+    <div class="length-container">
+      <input
+        type="range"
+        id="length"
+        min="8"
+        max="50"
+        value="25"
+        name="length"
+      />
+      <span id="lengthValue">25</span>
+    </div>
+
+    <div class="input-block-container">
+      <div class="input-letter">
+        <input type="checkbox" id="upperCase" name="upperCase" />
+        <label for="upperCase" class="checkbox-label"
+          >Uppercase letters (A-Z)</label
+        >
+      </div>
+      <div class="input-special-char">
+        <input
+          type="checkbox"
+          id="special-characters"
+          name="special-characters"
+        />
+        <label for="special-characters">Special characters (@!$%&*)</label>
+      </div>
+
+      <div class="input-numbers">
+        <input type="checkbox" id="numbers" name="numbers" />
+        <label for="numbers">Numbers (0-9)</label>
+      </div>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
