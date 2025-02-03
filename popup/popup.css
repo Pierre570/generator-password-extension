@@ -6,39 +6,40 @@
 
 body {
   width: 400px;
-  height: 325px;
-  padding: 10px;
-  background-color: #4c4c4c;
-  color: #fff;
-  font-size: 1rem;
+  padding: 20px;
+  background-color: #f3f4f6;
   font-family: "Poppins", sans-serif;
+  color: #374151;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 2rem;
-  margin-top: 18px;
-  text-shadow: 0 6px 4px #000;
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #111827;
+  margin-bottom: 20px;
 }
 
 .password-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #fff;
-  padding: 5px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .password-container p {
-  font-size: 1.5rem;
-  width: 70%;
+  font-size: 1rem;
+  color: #374151;
+  flex-grow: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .icons-container {
@@ -47,34 +48,125 @@ h1 {
 }
 
 .password-container img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #f3f4f6;
 }
 
 .password-container img:hover {
   transform: scale(1.1);
+  background-color: #e5e7eb;
 }
 
 .password-container img:active {
   transform: scale(0.9);
+  background-color: #d1d5db;
+}
+
+#copy-icon {
+  color: #3b82f6;
+}
+
+#refresh-icon {
+  color: #3b82f6;
+}
+
+/* Animation pour le refresh */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#refresh-icon:active {
+  animation: rotate 0.5s ease;
+}
+
+/* Feedback visuel pour la copie */
+#copy-icon.copied {
+  background-color: #34d399;
+}
+
+.label-length {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .length-container {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.label-length,
 #length {
-  display: block;
+  flex-grow: 1;
+}
+
+#lengthValue {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #111827;
 }
 
 .input-block-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+}
+
+.input-block-container label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+  margin: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #d1d5db;
+  outline: none;
+  transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+}
+
+input[type="range"]:hover {
+  background: #9ca3af;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 8px;
 }
