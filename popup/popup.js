@@ -112,7 +112,41 @@ class PasswordGenerator {
       result += this.getRandomChar(allChars);
     }
 
-    this.password.textContent = this.shuffleString(result);
+    const finalPassword = this.shuffleString(result);
+    this.password.textContent = finalPassword;
+    this.updatePasswordStrength(finalPassword);
+  }
+
+  updatePasswordStrength(password) {
+    const strengthIndicator = document.getElementById("password-strength");
+
+    const hasLength = password.length >= 12;
+    const hasUpper = /[A-Z]/.test(password);
+    const hasSpecial = /[@!$%&*]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+
+    let score = 0;
+    if (hasLength) score++;
+    if (hasUpper) score++;
+    if (hasSpecial) score++;
+    if (hasNumber) score++;
+
+    strengthIndicator.classList.remove(
+      "strength-weak",
+      "strength-moderate",
+      "strength-strong"
+    );
+
+    if (score <= 2) {
+      strengthIndicator.textContent = "Weak";
+      strengthIndicator.classList.add("strength-weak");
+    } else if (score === 3) {
+      strengthIndicator.textContent = "Moderate";
+      strengthIndicator.classList.add("strength-moderate");
+    } else {
+      strengthIndicator.textContent = "Strong";
+      strengthIndicator.classList.add("strength-strong");
+    }
   }
 }
 

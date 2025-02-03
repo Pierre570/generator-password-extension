@@ -23,7 +23,7 @@ h1 {
 .password-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -35,11 +35,9 @@ h1 {
 .password-container p {
   font-size: 1rem;
   color: #374151;
-  flex-grow: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-right: 10px;
+  margin: 0;
+  white-space: normal;
+  line-height: 1.4;
 }
 
 .icons-container {
@@ -169,4 +167,35 @@ input[type="range"]:hover {
 .checkbox-container {
   display: flex;
   gap: 8px;
+}
+
+.password-content {
+  flex-grow: 1;
+  margin-right: 10px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.strength-indicator {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.strength-weak {
+  background-color: #fecaca;
+  color: #dc2626;
+}
+
+.strength-moderate {
+  background-color: #fed7aa;
+  color: #ea580c;
+}
+
+.strength-strong {
+  background-color: #bbf7d0;
+  color: #16a34a;
 }
