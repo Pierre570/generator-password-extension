@@ -13,6 +13,12 @@ A simple browser extension that helps you generate secure passwords with customi
 
 ## Installation
 
+### Option 1: Chrome Web Store (Recommended)
+
+Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/timezone-converter/your-extension-id) and click "Add to Chrome"
+
+### Option 2: Manual Installation
+
 1. Clone this repository
 2. Open your browser and go to the extensions page
    - Chrome: `chrome://extensions/`
