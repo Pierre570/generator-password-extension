@@ -126,7 +126,7 @@ class PasswordGenerator {
     const hasNumber = /[0-9]/.test(password);
 
     let score = 0;
-    if (hasLength) score++;
+    if (hasLength) score += 2;
     if (hasUpper) score++;
     if (hasSpecial) score++;
     if (hasNumber) score++;
@@ -140,7 +140,7 @@ class PasswordGenerator {
     if (score <= 2) {
       strengthIndicator.textContent = "Weak";
       strengthIndicator.classList.add("strength-weak");
-    } else if (score === 3) {
+    } else if (score <= 3) {
       strengthIndicator.textContent = "Moderate";
       strengthIndicator.classList.add("strength-moderate");
     } else {
